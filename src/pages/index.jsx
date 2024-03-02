@@ -7,33 +7,13 @@ const Home = () => {
     const [activeWindow, setActiveWindow] = useState("chat");
 
     return (
-        <>
+        <div>
             <div id="Home">
                 <div className="chat_cont">
-                    <div className="header font-weight-bold text-center d-flex align-items-center justify-content-center text-white">
-                        Main Header
-                    </div>
                     <div className="col-12 d-flex m-0 p-0">
-                        <div id="user_list">
-                            Sidebar | Userslist
-                        </div>
                         <div id="chat_window">
-                            <div className="chat_header font-weight-bold text-center d-flex align-items-center justify-content-center">
-                                Chat Header
-                                <IconButton onClick={()=>setActiveWindow('call')} className="videocall_icon">
-                                    <VideocamIcon style={{color: "#fff"}} />
-                                </IconButton>
-                            </div>
-                            {activeWindow === 'call' ? (
-                                <Conference setActiveWindow={setActiveWindow} ></Conference>
-
-                            ) : (
-                                <div className="text_chat_wrapper">
-                                    text chat window
-                                </div>
-                            )}
+                            <Conference setActiveWindow={setActiveWindow} ></Conference>
                             <div className="chat_input_container">
-
                             </div>
                         </div>
                     </div>
@@ -48,8 +28,7 @@ const Home = () => {
                 justify-content: center;
             }
             #chat_window{
-                width: -webkit-fill-available;
-                // min-width: 800px;
+                width: 100vw;
             }
             .chat_cont{
                 height: 100vh;
@@ -84,7 +63,7 @@ const Home = () => {
                 }
             }
         `}</style>
-        </>
+        </div>
     )
 }
 
